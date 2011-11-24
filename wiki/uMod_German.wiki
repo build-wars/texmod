@@ -6,6 +6,7 @@ uMod braucht die D3DX9_43.dll (32bit). Diese dll ist nicht im uMod Paket enthalt
 
 
 = Erste Schritte =
+http://img542.imageshack.us/img542/8757/maingerman.jpg
 
 Stelle erst einmal die Sprache auf Deutsch (Bild 1 Punkt 5)
 

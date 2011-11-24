@@ -1,5 +1,3 @@
-# introduction, german
-
 = Universal Modding Engine (uMod) =
 
 Warnung: uMod analysiert oder ändert nicht den Code oder Daten des Spiels (mit drei Ausnahmen: 1) Hash bilden von Texturen 2) Speichern von Texturen und 3) die zweite dll-injection Methode schreibt Daten in die dll-Ladesequenz des Spiels). In uMod wird nur Code verwendet, welcher in ähnlicher Weise von offiziellen Microsoft Webseiten herunter geladen werden kann (mit Ausnahme der 2. dll-injection Methode). ABER es kann sein, dass uMod nicht kompatibel zur EULA einiger Spiel ist!

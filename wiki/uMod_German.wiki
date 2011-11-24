@@ -10,12 +10,13 @@ http://img542.imageshack.us/img542/8757/maingerman.jpg
 
 Stelle erst einmal die Sprache auf Deutsch (Bild 1 Punkt 5)
 
+
+== Zuerst das Spiel starten ==
 Es gibt drei Möglichkeiten wie man uMod mit einem Spiel zum Laufen bekommt. Nicht jede Methode wird mit jedem Spiel unter jeder Windows Version funktionieren. Probiere also aus, welche Methode funktioniert und welche dir am besten gefällt. Aber verwende niemals mehr als eine Methode gleichzeitig für das selbe Spiel. Für verschieden Spiele kannst du natürlich verschiedene Methoden (auch gleichzeitig) nutzen.
 
 Wenn du das Spiel gestartet hast, wird sich ein neuer Tab in uMod öffnen. In diesem Tab kannst du nun Mod laden, aktivieren, deaktivieren oder entfernen und Texturen aus dem Spiel speichern.
 
-
-== Methode 1 ==
+=== Methode 1 ===
 Globale Hook.
 
  # starte uMod
@@ -23,7 +24,7 @@ Globale Hook.
   # aktiviere die Hook (Bild 1 Punkt 4)
  # starte das Spiel (z. B. durch Doppelklick auf ein Desktop Icon)
 
-== Methode 2 ==
+=== Methode 2 ===
 
 Das Spiel wird durch uMod gestartet
 
@@ -32,7 +33,7 @@ Das Spiel wird durch uMod gestartet
   # standardmäßig über (Bild 1 Punkt 1)
   # oder mit Kommandozeilen-Parameter, die du an das Spiel übergeben kannst  (Bild 1 Punkt 2)
 
-== Methode 3 ==
+=== Methode 3 ===
 
 Das Spiel lädt die dll selber.
 
@@ -41,7 +42,12 @@ Das Spiel lädt die dll selber.
  # starte das Spiel (z. B. durch Doppelklick auf ein Desktop Icon) 
 
 
-== Speichern von Texturen ==
+
+== Jetzt kannst du das Spiel modifizieren ==
+
+http://img37.imageshack.us/img37/9569/moddinggerman.jpg
+
+=== Speichern von Texturen ===
 
 Siehe rote Kästchen im Bild 2.
 
@@ -53,7 +59,7 @@ Wen du "Speicher alle Texturen" aktiviert hast, speichert uMod alle Texturen, di
 
 Wenn du die Texturen editierst, kannst du sie einzeln zu uMod hinzufüge und während des Editierrens immer wieder in das Spiel hinein laden (Bild 2 Punkt 4), um die Änderungen direkt im Spiel verfolgen zu können.
 
-== Benutzen von Mods ==
+=== Benutzen von Mods ===
 
 Um Mods zu nutzen drücke den Knopf (Bild 2 Punk 1). Du kannst
 
@@ -68,6 +74,6 @@ Für jede Textur oder Mod-Paket, dass du zu uMod hinzufügst, wird ein neuer Ein
 
 Sollten mehrere Mods die gleiche Textur verändern wollen, so wird nur der erste Mod in der Liste (der diese Textur verändern will) berücksichtigt. Wenn der erste Mod deaktiviert wird, dann wird diese Textur auch nicht gemoddet!. Durch die Pfeiltasten kannst du die Reihenfolge der Mods verändern.
 
-== Templates ==
+=== Templates ===
 
 Du kannst alle deine Einstellungen in dem Tab in einem Template Speichern. Du kannst für jedes Spiel ein Template als Standard einstellen. Dieses wird dann geladen, wenn diese Spiel gestartet wird und alle Einstellungen und Mods werden an das Spiel automatisch gesendet.

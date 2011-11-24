@@ -5,9 +5,9 @@
 
 = Wichtige Hinweise =
 
-Warnung: uMod analysiert oder ändert nicht den Code oder Daten des Spiels (mit drei Ausnahmen: 1) Hash bilden von Texturen 2) Speichern von Texturen und 3) die zweite dll-injection Methode schreibt Daten in die dll-Ladesequenz des Spiels). In uMod wird nur Code verwendet, welcher in ähnlicher Weise von offiziellen Microsoft Webseiten herunter geladen werden kann (mit Ausnahme der 2. dll-injection Methode). ABER es kann sein, dass uMod nicht kompatibel zur EULA einiger Spiel ist!
+Warnung: uMod *analysiert oder ändert nicht* den Code oder Daten des Spiels (mit drei Ausnahmen: 1) Hash bilden von Texturen 2) Speichern von Texturen und 3) die zweite dll-injection Methode schreibt Daten in die dll-Ladesequenz des Spiels). In uMod wird nur Code verwendet, welcher in ähnlicher Weise von offiziellen Microsoft Webseiten herunter geladen werden kann (mit Ausnahme der 2. dll-injection Methode). *ABER* es kann sein, dass uMod nicht kompatibel zur *EULA* einiger Spiel ist!
 
-uMod braucht die D3DX9_43.dll (32bit). Diese dll ist nicht im uMod Paket enthalten. Wenn diese dll nicht auf deinem Computer installiert is, wird dich uMod darauf hinweisen. Du kannst diese dll im Internet runter laden oder die neusten [http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=35 DirectX Enduser Runtime] installieren.
+uMod braucht die *D3DX9_43.dll (32bit)*. Diese dll ist nicht im uMod Paket enthalten. Wenn diese dll nicht auf deinem Computer installiert is, wird dich uMod darauf hinweisen. Du kannst diese dll im Internet runter laden oder die neusten [http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=35 DirectX Enduser Runtime] installieren.
 
 
 

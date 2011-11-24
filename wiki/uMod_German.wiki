@@ -60,6 +60,8 @@ Wen du "Speicher alle Texturen" aktiviert hast, speichert uMod alle Texturen, di
 
 Wenn du die Texturen editierst, kannst du sie einzeln zu uMod hinzufüge und während des Editierrens immer wieder in das Spiel hinein laden (Bild 2 Punkt 4), um die Änderungen direkt im Spiel verfolgen zu können.
 
+Du kannst alle deine veränderten Texturen in einer Zip-Datei speichern und auch ein "Comment.txt" hinzufügen. In der "Comment.txt" kannst du Kommentare speichern, die in uMod angezeigt werden.
+
 === Benutzen von Mods ===
 
 Um Mods zu nutzen drücke den Knopf (Bild 2 Punk 1). Du kannst

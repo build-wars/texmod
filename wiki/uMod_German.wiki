@@ -50,7 +50,7 @@ http://img37.imageshack.us/img37/9569/moddinggerman.jpg
 
 === Speichern von Texturen ===
 
-Siehe rote Kästchen im Bild 2.
+Siehe rotes Rechteck im Bild 2.
 
 Du kannst dir aussuchen ob uMod alle Texturen speichern soll oder ob du die Texturen aussuchen willst, die gespeichert werden sollen. Du musst einen Speicherpfad setzten (Bild 2 Punkt 2). Wenn du einzelne Texturen speichern willst muss du noch 3 Tasten über die 3 DropDown Menüs festlegen. Danach drücke den "Update" Knopf (Bild 2 Punkt 3).
 
@@ -63,6 +63,8 @@ Wenn du die Texturen editierst, kannst du sie einzeln zu uMod hinzufüge und wä
 Du kannst alle deine veränderten Texturen in einer Zip-Datei speichern und auch ein "Comment.txt" hinzufügen. In der "Comment.txt" kannst du Kommentare speichern, die in uMod angezeigt werden.
 
 === Benutzen von Mods ===
+
+Siehe grünes Rechteck im Bild 2.
 
 Um Mods zu nutzen drücke den Knopf (Bild 2 Punk 1). Du kannst
 

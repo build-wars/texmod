@@ -9,7 +9,7 @@
 
 uMod needs the *D3DX9_43.dll (32bit)*. This dll is not included in the uMod package. If this dll is not installed on you computer, uMod will raise an error on start up. You can download this dll from the internet or install the latest [http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=35 DirectX Enduser Runtime].
 
-=At First start *uMod*=
+=At first start your game=
 
 http://img840.imageshack.us/img840/1691/maink.jpg
 
@@ -38,7 +38,7 @@ Let the game load our dll.
  # start the game (_e.g. double click on the desktop icon_)
 
 
-= Now you can modify your game =
+= Afterwards you can modify your game =
 
 http://img14.imageshack.us/img14/6717/modding.jpg
 

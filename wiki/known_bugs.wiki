@@ -1,0 +1,32 @@
+<wiki:toc max_depth="2" />
+
+= Known bugs =
+
+This is a list of know bugs, which are not solved. Each chapter is organized as follow:
+ # short introduction with list of games, which are known to me and are affected by the bug
+ # short description, how you recognize the bug
+ # _technical explanation about the bug_
+ # When will the bug be solved and are there currently ways around this bug.
+
+
+
+== Injection method 1 ==
+The injection via the hook might not work on Win XP for 
+ * Guild Wars
+ * Hotel
+
+The game starts, the tab in uMod opens, but you cannot modify the game in any way.
+
+_uMod needs the dll to be injected before the game calls the Direct3DCreate9() function. Somehow on Win XP for some game, the hook is installed to late, thus the game has already called Direct3DCreate9() and uMod recognize the game (the tab opens), but cannot modify it._
+
+This bug cannot be solved, but in the next version of uMod you will see a hint if the injection was early enough.
+
+== Save single textures ==
+In previous version (older than r35) in the "save single texture" mode the red text was written also on textures, which were rendered by the game (e.g. The Movie). This bug was solved in version r35, but this disabled the "save single texture" mode for some other games e.g.:
+ * Hotel
+
+You cannot select or save textures in the "save single texture" mode. The red text as well as the green texture does not appear.
+
+_uMod only draw the red text, if the device is drawing into a back buffer._
+
+This bug is not urgent, since you can use an older version for saving the textures.

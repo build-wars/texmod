@@ -21,6 +21,17 @@ _uMod needs the dll to be injected before the game calls the Direct3DCreate9() f
 
 This bug cannot be solved, but in the next version of uMod you will see a hint if the injection was early enough.
 
+== Less textures ==
+In "save single texture" mode not all texture are selectable. Not all texture are modified within a TexMod `*.tpf` mod, or even the mod does not work at all.
+ * Mass Effect 2 
+ * Fifa 12
+
+...
+
+_uMod calculate the hash, after it is created. Somehow the hash cannot be calculated for all texture, since uMod can't lock the texture data for these textures. Maybe the game holds still the lock on the texture data, thus uMod can't get it._
+
+If I guess right and the bug is caused by the lock, the bug will be solved soon.
+
 == Save single textures ==
 In previous version (older than r35) in the "save single texture" mode the red text was written also on textures, which were rendered by the game (e.g. The Movie). This bug was solved in version r35, but this disabled the modding at all for some other games. In the current version r40 the main problem is solved. But you cannot see the red text. Games which are influenced:
  * Hotel

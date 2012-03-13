@@ -250,6 +250,59 @@ HRESULT WINAPI  Direct3DCreate9Ex(UINT SDKVersion, IDirect3D9Ex **ppD3D)
   return (ret);
 }
 
+typedef IDirect3D9 *(APIENTRY *Direct3DCreate9_type)(UINT);
+typedef HRESULT (APIENTRY *Direct3DCreate9Ex_type)(UINT SDKVersion, IDirect3D9Ex **ppD3D);
+
+typedef int (WINAPI *D3DPERF_BeginEvent_type)( D3DCOLOR , LPCWSTR  );
+int WINAPI D3DPERF_BeginEvent( D3DCOLOR col, LPCWSTR wszName )
+{
+  D3DPERF_BeginEvent_type fn = (D3DPERF_BeginEvent_type) GetProcAddress( gl_hOriginalDll, "D3DPERF_BeginEvent");
+  return fn( col, wszName);
+}
+
+typedef int (WINAPI *D3DPERF_EndEvent_type)( void );
+int WINAPI D3DPERF_EndEvent( void )
+{
+  D3DPERF_EndEvent_type fn = (D3DPERF_EndEvent_type) GetProcAddress( gl_hOriginalDll, "D3DPERF_EndEvent");
+  return fn();
+}
+
+typedef void (WINAPI *D3DPERF_SetMarker_type)( D3DCOLOR , LPCWSTR );
+void WINAPI D3DPERF_SetMarker( D3DCOLOR col, LPCWSTR wszName )
+{
+  D3DPERF_SetMarker_type fn = (D3DPERF_SetMarker_type) GetProcAddress( gl_hOriginalDll, "D3DPERF_SetMarker");
+  return fn( col, wszName);
+}
+
+typedef void (WINAPI *D3DPERF_SetRegion_type)( D3DCOLOR, LPCWSTR );
+void WINAPI D3DPERF_SetRegion( D3DCOLOR col, LPCWSTR wszName )
+{
+  D3DPERF_SetRegion_type fn = (D3DPERF_SetRegion_type) GetProcAddress( gl_hOriginalDll, "D3DPERF_SetRegion");
+  return fn( col, wszName);
+}
+
+typedef BOOL (WINAPI *D3DPERF_QueryRepeatFrame_type)( void );
+BOOL WINAPI D3DPERF_QueryRepeatFrame( void )
+{
+  D3DPERF_QueryRepeatFrame_type fn = (D3DPERF_QueryRepeatFrame_type) GetProcAddress( gl_hOriginalDll, "D3DPERF_QueryRepeatFrame");
+  return fn( );
+}
+
+typedef void (WINAPI *D3DPERF_SetOptions_type)( DWORD );
+void WINAPI D3DPERF_SetOptions( DWORD dwOptions )
+{
+  D3DPERF_SetOptions_type fn = (D3DPERF_SetOptions_type) GetProcAddress( gl_hOriginalDll, "D3DPERF_SetOptions");
+  return fn( dwOptions);
+}
+
+typedef DWORD (WINAPI *D3DPERF_GetStatus_type)( void );
+DWORD WINAPI D3DPERF_GetStatus( void )
+{
+  D3DPERF_GetStatus_type fn = (D3DPERF_GetStatus_type) GetProcAddress( gl_hOriginalDll, "D3DPERF_GetStatus");
+  return fn( );
+}
+
+
 bool HookThisProgram( wchar_t *ret) //this function always return true, it is needed for the name and path of the executable
 {
   wchar_t Executable[MAX_PATH];

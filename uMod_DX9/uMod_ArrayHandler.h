@@ -165,13 +165,15 @@ int uMod_TextureHandler<T>::Remove(T* pTexture) //will be called, if a texture i
   if (gl_ErrorState & uMod_ERROR_FATAL) return (RETURN_FATAL_ERROR);
 
   int ref = pTexture->Reference;
-  if (ref<0) return (RETURN_OK); // returning if no TextureHandlerRef is set
+  if (ref<0|| ref>=Number) return (RETURN_OK); // it is not in this list
+  if (Textures[ref/FieldLength][ref%FieldLength]!=pTexture) return (RETURN_OK); // it is not in this list
 
   if (ref<(--Number))
   {
     Textures[ref/FieldLength][ref%FieldLength] = Textures[Number/FieldLength][Number%FieldLength];
     Textures[ref/FieldLength][ref%FieldLength]->Reference = ref;
   }
+  pTexture->Reference = -1;
   return (RETURN_OK);
 }
 

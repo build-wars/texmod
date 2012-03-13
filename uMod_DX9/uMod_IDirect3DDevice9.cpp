@@ -623,6 +623,8 @@ HRESULT uMod_IDirect3DDevice9::BeginScene(void)
     }
     uMod_Client->MergeUpdate(); // merge an update, if present
 
+    if (uMod_Client->Bool_CheckAgainNonAdded) uMod_Client->CheckAgainNonAdded();
+
     if (uMod_Client->BoolSaveSingleTexture)
     {
       if (CreateSingleTexture()==0)

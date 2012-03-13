@@ -297,15 +297,13 @@ int uMod_Sender::SendTextures(unsigned int num, AddTextureClass *tex)
         continue;
       }
 
-      if (tex[i].Size[j]+2*sizeof(MsgStruct)+pos>BIG_BUFSIZE) //the buffer is full
+      unsigned int size = tex[i].Size[j];
+      if ((sizeof(MsgStruct) + pos) >=BIG_BUFSIZE) //the buffer is full
       {
-        msg = (MsgStruct*) &Buffer[pos];
-        msg->Control = CONTROL_MORE_TEXTURES; // we will send more textures
-        pos+=sizeof(MsgStruct);
         if (int ret = SendToGame( Buffer, pos)) return ret;
         pos = 0;
       }
-      unsigned int size = tex[i].Size[j];
+
       msg = (MsgStruct*) &Buffer[pos];
       msg->Hash = temp_hash;
       msg->Value = size;
@@ -319,8 +317,16 @@ int uMod_Sender::SendTextures(unsigned int num, AddTextureClass *tex)
         char* temp = tex[i].Textures[j];
         if (temp!=NULL)
         {
-          for (unsigned int l=0; l<size; l++) Buffer[pos+l] = temp[l];
-          pos+=size;
+          unsigned int l = 0u;
+          while (l<size)
+          {
+            while (pos<BIG_BUFSIZE && l<size) Buffer[pos++] = temp[l++];
+            if (pos==BIG_BUFSIZE)
+            {
+              if (int ret = SendToGame( Buffer, pos)) return ret;
+              pos = 0;
+            }
+          }
         }
         tex[i].WasAdded[j] = true;
       }
@@ -342,7 +348,19 @@ int uMod_Sender::SendTextures(unsigned int num, AddTextureClass *tex)
       }
     }
   }
-  if (pos) if (int ret = SendToGame( Buffer, pos)) return ret;
+
+  if ((sizeof(MsgStruct) + pos) >=BIG_BUFSIZE) //the buffer is full
+  {
+    if (int ret = SendToGame( Buffer, pos)) return ret;
+    pos = 0;
+  }
+
+  msg = (MsgStruct*) &Buffer[pos];
+  msg->Control = CONTROL_END_TEXTURES; //End of texture sending
+  msg->Hash = 0u;
+  msg->Value = 0;
+  pos += sizeof(MsgStruct);
+  if (int ret = SendToGame( Buffer, pos)) return ret;
 
   if (LastError.Len()>0) return 1;
   else return 0;

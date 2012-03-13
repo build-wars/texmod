@@ -249,6 +249,7 @@ int uMod_IDirect3DTexture9::GetHash(MyTypeHash &hash)
   IDirect3DSurface9 *pResolvedSurface = NULL;
   D3DLOCKED_RECT d3dlr;
   D3DSURFACE_DESC desc;
+  bool normal_lock=true;
 
   if (pTexture->GetLevelDesc(0, &desc)!=D3D_OK) //get the format and the size of the texture
   {
@@ -256,10 +257,32 @@ int uMod_IDirect3DTexture9::GetHash(MyTypeHash &hash)
     return (RETURN_GetLevelDesc_FAILED);
   }
 
-  Message("uMod_IDirect3DTexture9::GetHash() (%d %d) %d\n", desc.Width, desc.Height, desc.Format);
+  Message("uMod_IDirect3DTexture9::GetHash() (%d %d) F%d T%d U%d P%d M(%d %d)\n", desc.Width, desc.Height,
+      desc.Format, desc.Type, desc.Usage, desc.Pool, desc.MultiSampleType, desc.MultiSampleQuality);
 
 
-  if (desc.Pool==D3DPOOL_DEFAULT) //get the raw data of the texture
+  if (desc.Pool!=D3DPOOL_DEFAULT)
+  {
+    if (pTexture->LockRect( 0, &d3dlr, NULL, D3DLOCK_READONLY)!=D3D_OK)
+    {
+      normal_lock = false;
+      Message("uMod_IDirect3DTexture9::GetHash() Failed: LockRect 1\n");
+      if (pTexture->GetSurfaceLevel(0, &pResolvedSurface)!=D3D_OK)
+      {
+        Message("uMod_IDirect3DTexture9::GetHash() Failed: GetSurfaceLevel\n");
+        //return (RETURN_LockRect_FAILED);
+        pResolvedSurface = NULL;
+      }
+      else if (pResolvedSurface->LockRect( &d3dlr, NULL, D3DLOCK_READONLY)!=D3D_OK)
+      {
+        pResolvedSurface->Release();
+        Message("uMod_IDirect3DTexture9::GetHash() Failed: LockRect 2\n");
+        pResolvedSurface = NULL;
+      //return (RETURN_LockRect_FAILED);
+      }
+    }
+  }
+  if (desc.Pool==D3DPOOL_DEFAULT || (!normal_lock && pResolvedSurface==NULL))//desc.Pool==D3DPOOL_DEFAULT) //get the raw data of the texture
   {
     //Message("uMod_IDirect3DTexture9::GetHash() (D3DPOOL_DEFAULT)\n");
 
@@ -312,21 +335,6 @@ int uMod_IDirect3DTexture9::GetHash(MyTypeHash &hash)
       if (pResolvedSurface!=NULL) pResolvedSurface->Release();
       pOffscreenSurface->Release();
       Message("uMod_IDirect3DTexture9::GetHash() Failed: LockRect (D3DPOOL_DEFAULT)\n");
-      return (RETURN_LockRect_FAILED);
-    }
-  }
-  else if (pTexture->LockRect( 0, &d3dlr, NULL, D3DLOCK_READONLY)!=D3D_OK)
-  {
-    Message("uMod_IDirect3DTexture9::GetHash() Failed: LockRect 1\n");
-    if (pTexture->GetSurfaceLevel(0, &pResolvedSurface)!=D3D_OK)
-    {
-      Message("uMod_IDirect3DTexture9::GetHash() Failed: GetSurfaceLevel\n");
-      return (RETURN_LockRect_FAILED);
-    }
-    if (pResolvedSurface->LockRect( &d3dlr, NULL, D3DLOCK_READONLY)!=D3D_OK)
-    {
-      pResolvedSurface->Release();
-      Message("uMod_IDirect3DTexture9::GetHash() Failed: LockRect 2\n");
       return (RETURN_LockRect_FAILED);
     }
   }

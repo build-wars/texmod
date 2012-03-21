@@ -15,7 +15,7 @@ uMod braucht die *D3DX9_43.dll (32bit)*. Diese dll ist nicht im uMod Paket entha
 
 Stelle erst einmal die Sprache auf Deutsch (Bild 1 Punkt 5).
 
-http://img542.imageshack.us/img542/8757/maingerman.jpg
+https://sites.google.com/a/koerner-de.net/umod/_/rsrc/1332358404346/home/main_german.jpg
 
 Es gibt drei Möglichkeiten wie man uMod mit einem Spiel zum Laufen bekommt. Nicht jede Methode wird mit jedem Spiel unter jeder Windows Version funktionieren. Probiere also aus, welche Methode funktioniert und welche dir am besten gefällt. Aber verwende niemals mehr als eine Methode gleichzeitig für das selbe Spiel. Für verschieden Spiele kannst du natürlich verschiedene Methoden (auch gleichzeitig) nutzen.
 
@@ -50,7 +50,7 @@ Das Spiel lädt die dll selber.
 
 = Zweiter Schritt: Spiel modifizieren =
 
-http://img37.imageshack.us/img37/9569/moddinggerman.jpg
+https://sites.google.com/a/koerner-de.net/umod/_/rsrc/1332358412717/home/modding_german.jpg
 
 == Speichern von Texturen ==
 

@@ -11,7 +11,7 @@ uMod needs the *D3DX9_43.dll (32bit)*. This dll is not included in the uMod pack
 
 =At first start your game=
 
-http://img840.imageshack.us/img840/1691/maink.jpg
+https://sites.google.com/a/koerner-de.net/umod/_/rsrc/1332358399224/home/main.jpg
 
 There are three methods how to get uMod work together with your game. Not each method does work on each OS with each game, so you can choose which method works and which method you like best. But use only one method for a game. For different games you can use different methods and you can also run more than one game at the same time (also with different methods).
 
@@ -40,7 +40,7 @@ Let the game load our dll.
 
 = Afterwards you can modify your game =
 
-http://img14.imageshack.us/img14/6717/modding.jpg
+https://sites.google.com/a/koerner-de.net/umod/_/rsrc/1332358408193/home/modding.jpg
 
 ==Save textures from a game==
 See Picture 2 red rectangle.
